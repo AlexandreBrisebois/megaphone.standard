@@ -31,5 +31,5 @@ jobs:
     - name: Pack
       run: dotnet pack ./src/megaphone.standard/megaphone.standard.csproj --configuration Release --no-build
     - name: Push generated package to GitHub registry
-      run: dotnet nuget push ./src/megaphone.standard/megaphone.standard/bin/Release/*.nupkg --skip-duplicate --no-symbols true
+      run: dotnet nuget push ./src/megaphone.standard/bin/Release/*.nupkg --skip-duplicate --no-symbols true
       
