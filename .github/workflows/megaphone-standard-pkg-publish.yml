@@ -27,7 +27,7 @@ jobs:
     - name: Build
       run: dotnet build ./src/megaphone.standard.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test ./src/megaphone.standard.tests/megaphone.standard.tests.csproj --no-build --verbosity normal
+      run: dotnet test ./src/megaphone.standard.tests/megaphone.standard.tests.csproj --configuration Release --no-build --verbosity normal
     - name: Pack
       run: dotnet pack ./src/megaphone.standard/megaphone.standard.csproj --configuration Release --no-build
     - name: Push generated package to GitHub registry
