@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: dotnet restore ./src/megaphone.standard.sln
     - name: Build
-      run: dotnet build ./src/megaphone.standard/megaphone.standard.sln --configuration Release --no-restore
+      run: dotnet build ./src/megaphone.standard.sln --configuration Release --no-restore
     - name: Test
       run: dotnet test ./src/megaphone.standard.tests/megaphone.standard.tests.csproj --no-restore --no-build --verbosity normal
     - name: Pack
