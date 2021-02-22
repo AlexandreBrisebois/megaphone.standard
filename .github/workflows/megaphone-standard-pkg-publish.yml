@@ -18,7 +18,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1.7.2
       with:
-        dotnet-version: 3.1.101
+        dotnet-version: 3.1.x
         source-url: https://nuget.pkg.github.com/AlexandreBrisebois/index.json
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -27,9 +27,9 @@ jobs:
     - name: Build
       run: dotnet build ./src/megaphone.standard.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test ./src/megaphone.standard.tests/megaphone.standard.tests.csproj --no-restore --no-build --verbosity normal
+      run: dotnet test ./src/megaphone.standard.tests/megaphone.standard.tests.csproj --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack ./src/megaphone.standard/megaphone.standard.csproj --configuration Release --no-restore --no-build
+      run: dotnet pack ./src/megaphone.standard/megaphone.standard.csproj --configuration Release --no-build
     - name: Push generated package to GitHub registry
       run: dotnet nuget push ./src/megaphone.standard/megaphone.standard/bin/Release/*.nupkg --skip-duplicate --no-symbols true
       
