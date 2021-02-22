@@ -6,6 +6,8 @@
 		<RootNamespace>Megaphone.Standard</RootNamespace>
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
+		<PackageProjectUrl>https://github.com/AlexandreBrisebois/megaphone.standard</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/AlexandreBrisebois/megaphone.standard</RepositoryUrl>
 	</PropertyGroup>
 
 </Project>

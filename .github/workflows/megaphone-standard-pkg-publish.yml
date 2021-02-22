@@ -1,0 +1,35 @@
+name: "Megaphone Standard Package Publish"
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      
+jobs:
+  build:
+    name: Build, Test & Publish Package
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1.7.2
+      with:
+        dotnet-version: 3.1.101
+        source-url: https://nuget.pkg.github.com/AlexandreBrisebois/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - name: Install dependencies
+      run: dotnet restore ./src/megaphone.standard.sln
+    - name: Build
+      run: dotnet build ./src/megaphone.standard/megaphone.standard.sln --configuration Release --no-restore
+    - name: Test
+      run: dotnet test ./src/megaphone.standard.tests/megaphone.standard.tests.csproj --no-restore --no-build --verbosity normal
+    - name: Pack
+      run: dotnet pack ./src/megaphone.standard/megaphone.standard.csproj --configuration Release --no-restore --no-build
+    - name: Push generated package to GitHub registry
+      run: dotnet nuget push ./src/megaphone.standard/megaphone.standard/bin/Release/*.nupkg --skip-duplicate --no-symbols true
+      
