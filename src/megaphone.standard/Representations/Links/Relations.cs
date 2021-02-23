@@ -3,6 +3,7 @@
     public static class Relations
     {
         public static string Self = "self";
+        public static string Cache = "cache";
         public static string Alternate = "alternate";
         public static string Last = "last";
         public static string First = "first";
