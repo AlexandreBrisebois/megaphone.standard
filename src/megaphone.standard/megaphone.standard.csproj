@@ -8,7 +8,7 @@
 		<Nullable>enable</Nullable>
 		<PackageProjectUrl>https://github.com/AlexandreBrisebois/megaphone.standard</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/AlexandreBrisebois/megaphone.standard</RepositoryUrl>
-		<Version>1.0.3</Version>
+		<Version>1.0.4</Version>
 		<PackageReleaseNotes>representation base types</PackageReleaseNotes>
 	</PropertyGroup>
 

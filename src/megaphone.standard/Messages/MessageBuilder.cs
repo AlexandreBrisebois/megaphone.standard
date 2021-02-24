@@ -4,11 +4,11 @@
     {
         private readonly CommandMessage e;
 
-        private MessageBuilder(string eventName) => e = new CommandMessage(eventName);
+        private MessageBuilder(string name) => e = new CommandMessage() { Name = name };
 
-        public static MessageBuilder NewCommand(string eventName)
+        public static MessageBuilder NewCommand(string name)
         {
-            var b = new MessageBuilder(eventName);
+            var b = new MessageBuilder(name);
             return b;
         }
 
