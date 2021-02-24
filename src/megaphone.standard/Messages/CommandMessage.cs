@@ -10,7 +10,7 @@ namespace Megaphone.Standard.Messages
         [JsonPropertyName("id")]
         public string Id { get; init; } = Guid.NewGuid().ToString();
         [JsonPropertyName("action")]
-        public string Name { get; init; } = string.Empty;
+        public string Action { get; init; } = string.Empty;
         [JsonPropertyName("created")]
         public DateTimeOffset Created { get; init; } = DateTimeOffset.UtcNow;
         [JsonPropertyName("parameters")]

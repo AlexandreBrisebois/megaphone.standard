@@ -4,7 +4,7 @@
     {
         private readonly CommandMessage e;
 
-        private MessageBuilder(string name) => e = new CommandMessage() { Name = name };
+        private MessageBuilder(string name) => e = new CommandMessage() { Action = name };
 
         public static MessageBuilder NewCommand(string name)
         {

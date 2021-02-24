@@ -11,7 +11,7 @@ namespace Megaphone.Standard.Tests
         public void MessageHasActionName()
         {
             var e = MessageBuilder.NewCommand("crawl-request").Make();
-            Assert.Equal("crawl-request", e.Name);
+            Assert.Equal("crawl-request", e.Action);
         }
 
         [Fact]
