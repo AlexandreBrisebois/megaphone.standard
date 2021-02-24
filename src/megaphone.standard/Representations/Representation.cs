@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json.Serialization;
 
-namespace Megaphone.Resources.Representations
+namespace Megaphone.Standard.Representations
 {
     public abstract class Representation
     {

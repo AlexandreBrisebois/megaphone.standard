@@ -28,7 +28,7 @@ namespace Megaphone.Standard.Services
             storage.TryAdd(partitionKey, new ConcurrentDictionary<string, TContent>());
 
             storage.TryGetValue(partitionKey, out var partition);
-            
+
             if (partition != null)
                 partition.AddOrUpdate(contentKey, content, (s, c) => content);
 

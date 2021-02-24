@@ -13,7 +13,7 @@ namespace Megaphone.Standard.Events
             var b = new EventBuilder(eventName);
             return b;
         }
-  
+
         public EventBuilder WithMetadata(string name, string value)
         {
             this.e.Metadata.Add(name, value);

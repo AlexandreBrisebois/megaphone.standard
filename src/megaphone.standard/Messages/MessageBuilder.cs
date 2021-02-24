@@ -16,8 +16,8 @@
         {
             e.Metadata.Add(name, value);
             return this;
-        } 
-        
+        }
+
         public MessageBuilder WithParameters(string name, string value)
         {
             e.Parameters.Add(name, value);
