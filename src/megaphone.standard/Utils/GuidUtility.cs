@@ -51,7 +51,7 @@ namespace Megaphone.Standard.Utils
 
             // comput the hash of the name space ID concatenated with the name (step 4)
             byte[] hash;
-            using (HashAlgorithm algorithm = version == 3 ? MD5.Create() : SHA1.Create())
+            using (HashAlgorithm algorithm = version == 3 ? (HashAlgorithm)MD5.Create() : (HashAlgorithm)SHA1.Create())
             {
                 algorithm.TransformBlock(namespaceBytes, 0, namespaceBytes.Length, null, 0);
                 algorithm.TransformFinalBlock(nameBytes, 0, nameBytes.Length);
