@@ -7,18 +7,16 @@ namespace Megaphone.Standard.Representations
 {
     public abstract class Representation
     {
-        private readonly List<Link> links = new();
-
         [JsonPropertyName("links")]
-        public IEnumerable<Link> Links { get { return links; } }
+        public List<Link> Links { get; init; } = new();
 
         public void AddLink(string relation, string href)
         {
-            links.Add(Link.Make(relation, href));
+            Links.Add(Link.Make(relation, href));
         }
         public void AddLink(string relation, string href, HttpMethod method)
         {
-            links.Add(Link.Make(relation, href, method));
+            Links.Add(Link.Make(relation, href, method));
         }
     }
 }

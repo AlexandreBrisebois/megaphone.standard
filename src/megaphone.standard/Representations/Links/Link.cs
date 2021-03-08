@@ -6,11 +6,16 @@ namespace Megaphone.Standard.Representations.Links
     public class Link
     {
         [JsonPropertyName("rel")]
-        public string Rel { get; private set; }
+        public string Rel { get; init; }
         [JsonPropertyName("href")]
-        public string Href { get; private set; }
+        public string Href { get; init; }
         [JsonPropertyName("method")]
-        public string Method { get; private set; }
+        public string Method { get; init; }
+
+        public Link()
+        {
+
+        }
 
         public Link(string relation, string href, string method)
         {
