@@ -7,10 +7,6 @@ on:
         description: 'Log level'     
         required: true
         default: 'warning'
-  push:
-    paths:
-      - 'src/megaphone.standard/**'
-      - 'src/megaphone.standard.tests/**'
   pull_request:
     branches: [ main ]
     paths:
