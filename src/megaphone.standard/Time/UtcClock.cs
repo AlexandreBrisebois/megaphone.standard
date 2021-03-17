@@ -4,6 +4,12 @@ namespace Megaphone.Standard.Time
 {
     public class UtcClock : IClock
     {
-        public DateTimeOffset Now => DateTimeOffset.UtcNow;
+        public DateTimeOffset Now
+        {
+            get
+            {
+                return DateTimeOffset.UtcNow;
+            }
+        }
     }
 }
