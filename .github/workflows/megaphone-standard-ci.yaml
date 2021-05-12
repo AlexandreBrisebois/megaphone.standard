@@ -28,7 +28,7 @@ jobs:
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - name: build and test megaphone.standard
-      uses: zyborg/dotnet-tests-report@v1
+      uses: zyborg/dotnet-tests-report@v1.4.2
       with:
           project_path: "./src/megaphone.standard.tests/"
           report_name: "Megaphone Standard Tests Results"
